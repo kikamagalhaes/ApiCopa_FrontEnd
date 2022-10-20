@@ -39,10 +39,74 @@
 	</nav>
 	</div>
 	  <!-- Conteudo -->
+	  <!-- Conteudo -->
 	<div class="h-75 w-100 p-3"   style="text-align:center;">
 
-		<H3 > API COPA DO Mundo</h1>
-		<H4 >Bem vindo a aplicação da copa do mundo, saiba todo os acontecimentos</h4>
+        <h1>Jogos</h1>
+        <br>
+
+
+
+        <hr>
+
+        <table class="table">
+            <thead>
+              <tr>
+			    <th scope="col">Fase</th>
+                <th scope="col">Seleção A</th>
+                <th scope="col">Gols</th>
+                <th scope="col">Seleção B</th>
+				<th scope="col">Gols</th>
+				<th scope="col">Inicio do Jogo</th>
+				<th scope="col">Fim do Jogo</th>
+              </tr>
+            </thead>
+            <tbody id="linhas">
+              <tr>
+                <th scope="row"> Carregando ... </th>
+                <td> Carregando ... </td>
+                <td> Carregando ... </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <script>
+            const API_HOST = "https://localhost:44338";
+            var carregarJogos = async () => {
+                const settings = {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    }
+                };
+
+                try {
+                    const fetchResponse = await fetch(`${API_HOST}/api/jogos`, settings);
+                    const jogos = await fetchResponse.json();
+                    let html = "";
+                    jogos.forEach(jogos => {
+                        html += `
+                            <tr>
+                                <th scope="row">${jogos.fase}</th>
+                                <td>${jogos.selecaoA}</td>
+                                <td>${jogos.golA}</td>
+								<td>${jogos.selecaoB}</td>
+                                <td>${jogos.golB}</td>
+								<td>${jogos.inicioJogo}</td>
+								<td>${jogos.fimJogo}</td>
+                            </tr>
+                        ` 
+                    });
+
+                    document.getElementById("linhas").innerHTML = html;
+                } catch (e) {
+                    console.log(e);
+                }    
+            }
+
+            carregarJogos();
+          </script>
 	
 	</div>
 	

@@ -39,12 +39,137 @@
 	</nav>
 	</div>
 	  <!-- Conteudo -->
-	<div class="h-75 w-100 p-3"   style="text-align:center;">
+        <h1>Fases</h1>
+        <br>
 
-		<H3 > API COPA DO Mundo</h1>
-		<H4 >Bem vindo a aplicação da copa do mundo, saiba todo os acontecimentos</h4>
+
+
+        <hr>
+		<div  id="fases">
+          <script>
+            const API_HOST = "https://localhost:44338";
+            var carregarFase = async () => {
+                const settings = {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    }
+                };
+
+                try {
+                    const fetchResponse = await fetch(`${API_HOST}/api/jogos`, settings);
+                    const jogos = await fetchResponse.json();
+                    let html = "";
+                    jogos.forEach(jogos => {
+                        html += `
+						<table class="table" id="${jogos.fase}">
+                            <tr>
+                                <th scope="row">${jogos.fase}</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+						</table>
+						` 					
+				});
 	
+			
+
+                    document.getElementById("fases").innerHTML = html;
+					jogos.forEach(jogos => {
+						if(jogos.fase == "grupos")
+					{
+						html += `
+								<tr>
+								   <th scope="row">${jogos.id}</th>
+								   <th scope="row">${jogos.selecaoA}</th>
+								   <th scope="row">${jogos.golA}</th>
+								   <th scope="row">${jogos.selecaoB}</th>
+								   <th scope="row">${jogos.golB}</th>
+								</tr>
+                           `	
+                      }						   
+				 });
+				document.getElementById("grupos").innerHTML = html;
+				jogos.forEach(jogos => {
+						if(jogos.fase == "oitavas")
+					{
+						html += `
+								<tr>
+								   <th scope="row">${jogos.id}</th>
+								   <th scope="row">${jogos.selecaoA}</th>
+								   <th scope="row">${jogos.golA}</th>
+								   <th scope="row">${jogos.selecaoB}</th>
+								   <th scope="row">${jogos.golB}</th>
+								</tr>
+                           `	
+                      }						   
+				 });
+				document.getElementById("oitavas").innerHTML = html;
+				jogos.forEach(jogos => {
+						if(jogos.fase == "quartas")
+					{
+						html += `
+								<tr>
+								   <th scope="row">${jogos.id}</th>
+								   <th scope="row">${jogos.selecaoA}</th>
+								   <th scope="row">${jogos.golA}</th>
+								   <th scope="row">${jogos.selecaoB}</th>
+								   <th scope="row">${jogos.golB}</th>
+								</tr>
+                           `	
+                      }						   
+				 });
+				document.getElementById("quartas").innerHTML = html;
+				jogos.forEach(jogos => {
+						if(jogos.fase == "semi")
+					{
+						html += `
+								<tr>
+								   <th scope="row">${jogos.id}</th>
+								   <th scope="row">${jogos.selecaoA}</th>
+								   <th scope="row">${jogos.golA}</th>
+								   <th scope="row">${jogos.selecaoB}</th>
+								   <th scope="row">${jogos.golB}</th>
+								</tr>
+                           `	
+                      }						   
+				 });
+				document.getElementById("semi").innerHTML = html;
+								jogos.forEach(jogos => {
+						if(jogos.fase == "final")
+					{
+						html += `
+								<tr>
+								   <th scope="row">${jogos.id}</th>
+								   <th scope="row">${jogos.selecaoA}</th>
+								   <th scope="row">${jogos.golA}</th>
+								   <th scope="row">${jogos.selecaoB}</th>
+								   <th scope="row">${jogos.golB}</th>
+								</tr>
+                           `	
+                      }						   
+				 });
+				document.getElementById("final").innerHTML = html;
+				
+				
+				
+					
+                } catch (e) {
+                    console.log(e);
+                }    
+            }
+
+            carregarFase();
+          </script>
+	  </div>
 	</div>
+	
 	
 	
   <!-- rodape -->
