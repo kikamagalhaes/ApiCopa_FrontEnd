@@ -17,16 +17,16 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-		  <li class="nav-item ">
+		  <li class="nav-item active">
 			<a class="nav-link" href="index.html">Home </a>
 		  </li>
-		  <li class="nav-item ">
+		  <li class="nav-item">
 			<a class="nav-link" href="selecoes.html">Seleções </a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="fases.html">Fases</a>
 		  </li>
-		  <li class="nav-item active">
+		  <li class="nav-item">
 			<a class="nav-link" href="jogos.html">Jogos</a>
 		  </li>
 		  <li class="nav-item">
@@ -39,78 +39,71 @@
 	</nav>
 	</div>
 	  <!-- Conteudo -->
-	  <!-- Conteudo -->
-	<div class="h-75 w-100 p-3"   style="text-align:center;">
+	<div class="h-75 w-100 p-3" id="conteudo"  style="text-align:center;">
 
-        <h1>Jogos</h1>
-        <br>
+	
+	
+	</div>
+	
+	<script>
+	if(localStorage.getItem("login") == 1)
+	{
+		let html = `	
+		<h1>Cadastrar Seleção</h1>
+        <form onsubmit="cadastrar(event)">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" value=""><br>
+            <label for="descricao">Descricao:</label><br>
+            <input type="text" id="descricao" name="descricao" value=""><br><br>
+			 <label for="bandeira">Bandeira:</label><br>
+            <input type="text" id="bandeira" name="bandeira" value=""><br><br>
+            <input type="submit" class="btn btn-primary" value="Enviar">
+        </form> 
+		` ;	
+		document.getElementById("conteudo").innerHTML = html;
+    const API_HOST = "http://localhost:5001";
+	var cadastrar = async (event) => {
+                event.preventDefault();
 
-
-
-        <hr>
-
-        <table class="table">
-            <thead>
-              <tr>
-			    <th scope="col">Fase</th>
-                <th scope="col">Seleção A</th>
-                <th scope="col">Gols</th>
-                <th scope="col">Seleção B</th>
-				<th scope="col">Gols</th>
-				<th scope="col">Inicio do Jogo</th>
-				<th scope="col">Fim do Jogo</th>
-              </tr>
-            </thead>
-            <tbody id="linhas">
-              <tr>
-                <th scope="row"> Carregando ... </th>
-                <td> Carregando ... </td>
-                <td> Carregando ... </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <script>
-            const API_HOST = "http://localhost:5001";
-            var carregarJogos = async () => {
-                const settings = {
-                    method: 'GET',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                    }
+                let admin = {
+                    nome: document.getElementById("nome").value,
+                    descricao: document.getElementById("descricao").value,
+					bandeira: document.getElementById("bandeira").value,
+	
                 };
 
+                const settings = {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(admin)
+					
+                };
                 try {
-                    const fetchResponse = await fetch(`${API_HOST}/api/jogos`, settings);
-                    const jogos = await fetchResponse.json();
-                    let html = "";
-                    jogos.forEach(jogos => {
-                        html += `
-                            <tr>
-                                <th scope="row">${jogos.fase}</th>
-                                <td>${jogos.selecaoA}</td>
-                                <td>${jogos.golA}</td>
-								<td>${jogos.selecaoB}</td>
-                                <td>${jogos.golB}</td>
-								<td>${jogos.inicioJogo}</td>
-								<td>${jogos.fimJogo}</td>
-                            </tr>
-                        ` 
-                    });
+                    const fetchResponse = await fetch(`${API_HOST}/api/selecoes`, settings);
+                    let retorno = await fetchResponse.json();
+					console.log(retorno);
+                    document.getElementById("nome").value = "";
+                    document.getElementById("descricao").value = "";
+					document.getElementById("bandeira").value = "";
+					
 
-                    document.getElementById("linhas").innerHTML = html;
                 } catch (e) {
                     console.log(e);
                 }    
             }
+	}
+	else
+	{
+		let html = `	
 
-            carregarJogos();
-          </script>
-	
-	</div>
-	
-	
+		<H4 >LOGUE-SE</h4>
+		` ;	
+		document.getElementById("conteudo").innerHTML = html;
+	}
+	</script>
   <!-- rodape -->
 	<div class="w-100 h-10 p-3">
 	<footer class="bg-dark text-light">

@@ -41,13 +41,14 @@
 	  <!-- Conteudo -->
         <h1>Fases</h1>
         <br>
-
+			<table class="table" id="jogos">
+			</table>
 
 
         <hr>
 		<div  id="fases">
           <script>
-            const API_HOST = "https://localhost:44338";
+            const API_HOST = "http://localhost:5001";
             var carregarFase = async () => {
                 const settings = {
                     method: 'GET',
@@ -60,6 +61,7 @@
                 try {
                     const fetchResponse = await fetch(`${API_HOST}/api/jogos`, settings);
                     const jogos = await fetchResponse.json();
+					/*
                     let html = "";
                     jogos.forEach(jogos => {
                         html += `
@@ -77,26 +79,94 @@
 						</table>
 						` 					
 				});
-	
-			
 
                     document.getElementById("fases").innerHTML = html;
+				*/
+					let html = "";
+					html = `
+							<tr>
+                                <th scope="row">Grupos</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+							<tbody id="grupos">
+							</tbody>
+							<tr>
+                                <th scope="row">Oitavas</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+							<tbody id="oitavas">
+							</tbody>
+							<tr>
+                                <th scope="row">Quartas</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+							<tbody id="quartas">
+							</tbody>
+							<tr>
+                                <th scope="row">Semi Finais</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+							<tbody id="semi">
+							</tbody>
+							<tr>
+                                <th scope="row">Final</th>
+                            </tr>
+							<tr>
+							   <th scope="row">Jogo</th>
+							   <th scope="row">selecaoA</th>
+							   <th scope="row">Gols</th>
+							   <th scope="row">selecaoB</th>
+							   <th scope="row">Gols</th>
+							</tr>
+							<tbody id="final">
+							</tbody>
+					`
+					document.getElementById("jogos").innerHTML = html;
+					html = ""
 					jogos.forEach(jogos => {
 						if(jogos.fase == "grupos")
 					{
 						html += `
-								<tr>
+
+							<tr>
 								   <th scope="row">${jogos.id}</th>
 								   <th scope="row">${jogos.selecaoA}</th>
 								   <th scope="row">${jogos.golA}</th>
 								   <th scope="row">${jogos.selecaoB}</th>
 								   <th scope="row">${jogos.golB}</th>
-								</tr>
+							<tr>
+								
                            `	
                       }						   
 				 });
 				document.getElementById("grupos").innerHTML = html;
-				jogos.forEach(jogos => {
+			
+					html = ""
+				   jogos.forEach(jogos => {
 						if(jogos.fase == "oitavas")
 					{
 						html += `
@@ -111,8 +181,9 @@
                       }						   
 				 });
 				document.getElementById("oitavas").innerHTML = html;
+					html = ""
 				jogos.forEach(jogos => {
-						if(jogos.fase == "quartas")
+				if(jogos.fase == "quartas")
 					{
 						html += `
 								<tr>
@@ -126,6 +197,7 @@
                       }						   
 				 });
 				document.getElementById("quartas").innerHTML = html;
+					html = ""
 				jogos.forEach(jogos => {
 						if(jogos.fase == "semi")
 					{
@@ -141,7 +213,8 @@
                       }						   
 				 });
 				document.getElementById("semi").innerHTML = html;
-								jogos.forEach(jogos => {
+				html = ""
+				jogos.forEach(jogos => {
 						if(jogos.fase == "final")
 					{
 						html += `
