@@ -100,12 +100,12 @@ Front-End - https://github.com/kikamagalhaes/ApiCopa_FrontEnd <br><br><br><br>
 <br><br><br>
 
 ## Back-end
-* CRUD - Implementação dos métodos Get, Post, Put e Delete
+* CRUD - Implementação dos métodos Get, Post, Put e Delete sendo demonstrado no Swagger
 <img src="https://github.com/kikamagalhaes/imagens/blob/main/copa8.jpg" width="800"  />
 <br>
 <br>
 
-* Ainda implementando os verbos
+* Ainda no Swagger demonstrando a implementação dos verbos
 <img src="https://github.com/kikamagalhaes/imagens/blob/main/copa9.jpg" width="800"  />
 <br>
 <br><br><br>
@@ -122,3 +122,4 @@ Somos gratos à <strong>Carina</strong> que em todo o tempo nos acompanhou e pos
  <strong><em>  ⁠"Use como combustível!"</strong> - Frase que ouvimos do professor Danilo, e que levaremos para a vida em uma postura de resiliência mediante as adversidades que encontrarmos no caminho.   Sim, Professor Danilo, faremos isso.  Obrigado pelo exemplo.</em><br></p>
    
   <p> E sim, <strong> Stone </strong>! Este é apenas o início da nossa linda Jornada.  Vamos em frente!</p>
+
