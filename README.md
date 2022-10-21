@@ -28,7 +28,7 @@
   </a>
   
   <td align="center"><img style="width: 45%; border-radius: 50%"
-  src="https://github.com/kikamagalhaes/imagens/blob/main/milton2.png" 
+  src="https://imagizer.imageshack.com/v2/240x300q90/c/r/924/YlmzOK.png" 
   alt="Milton Rodrigues"/><br /><b>Milton Rodrigues</b></a><br />
    <a href="https://www.linkedin.com/in/milton-rodrigues-7984a51b2/" alt="Linkedin">
   <br>
@@ -44,8 +44,8 @@
 <br>
  <h2>📄Metodologias e tecnologias utilizadas</h2>
  ✔️ <strong>Ágeis: </strong> <em> Kanban no Trello com responsabilidades distribuídas </em><br>
- ✔️ <strong>Front-end:</strong> <em>Projeto AspNET Core MVC em C# com a utilização de HTML e Bootstrap </em> <br>
- ✔️ <strong>Back-end:</strong> <em>Api em C# com implementação dos métodos Get, Post, Put e Delete via Insomnia e Swagger </em> <br>
+ ✔️ <strong>Front-end:</strong> <em>Utilização de HTML e Bootstrap </em> <br>
+ ✔️ <strong>Back-end:</strong> <em>Api AspNet Core 5.0 em C# com implementação dos métodos Get, Post, Put e Delete via Insomnia e Swagger </em> <br>
  ✔️ <strong>Banco de Dados:</strong><em> com a utilização do SQL Server e Entity Framework.</em>  <br>
  ✔️ <strong>Contâiner:</strong> <em> empacotamento da Aplicação no Docker.</em>  <br>
  ✔️ <strong>Versionamento:</strong><em> uso do Git e disponibilização do código no GitHub. </em><br>
@@ -60,7 +60,7 @@
 <br>
 <br>
 <br>
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/trello.png?raw=true" width="800" />
+<img src="https://imagizer.imageshack.com/img924/9044/daclrp.png" width="800" />
 <br>
 <br>
 <br>
@@ -70,43 +70,43 @@ Back-End - https://github.com/kikamagalhaes/ApiCopa_BackEnd <br>
 Front-End - https://github.com/kikamagalhaes/ApiCopa_FrontEnd <br><br><br><br>
 
 ## Front-end
-* Projeto AspNET Core MVC em C# com a utilização de HTML e Bootstrap
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa1.jpg" width="800"  />
+* Utilização de HTML, Javascript e Bootstrap
+<img src="https://imagizer.imageshack.com/v2/1280x238q90/r/922/DmwxnD.jpg" width="800"  />
 <br>
 <br><br>
 
 * Listagem das Seleções e suas bandeiras
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa2.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/1280x630q90/r/924/EVk5l1.jpg" width="800"  />
 <br>
 <br><br>
 
 * Listagem das Fases
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa3.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/1280x615q90/r/924/3FhBwb.jpg" width="800"  />
 <br>
 <br><br>
 
 * Login Administrativo
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa5.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/951x457q90/r/923/nNXkRE.jpg" width="800"  />
 <br>
 <br><br>
 
 * Inserção de dados das Seleções
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa6.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/951x313q90/r/922/WxyXZC.jpg"  />
 <br>
 <br><br>
 * Logout
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa7.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/951x181q90/r/924/OPfx2X.jpg"  />
 <br>
 <br><br><br>
 
 ## Back-end
 * CRUD - Implementação dos métodos Get, Post, Put e Delete sendo demonstrado no Swagger
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa8.jpg" width="800"  />
+<img src="[https://imageshack.com/a/img923/1165/ctKDY1.jpg"  />
 <br>
 <br>
 
 * Ainda no Swagger demonstrando a implementação dos verbos
-<img src="https://github.com/kikamagalhaes/imagens/blob/main/copa9.jpg" width="800"  />
+<img src="https://imagizer.imageshack.com/v2/951x329q90/r/924/d9vQcU.jpg"  />
 <br>
 <br><br><br>
 
